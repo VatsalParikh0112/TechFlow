@@ -1,0 +1,60 @@
+<div class="flex h-16 items-center justify-between px-2 md:px-5 lg:px-10 bg-white shadow-md">
+  <div class="flex items-center gap-4 lg:gap-8">
+    <svg
+      (click)="onMenuToggle()"
+      class="cursor-pointer"
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="24" height="24" transform="translate(0 0.5)" fill="white" />
+      <path
+        d="M4 6.5H20"
+        stroke="black"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="transition-transform duration-300"
+      />
+      <path
+        d="M4 12.5H20"
+        stroke="black"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="transition-opacity duration-300"
+      />
+      <path
+        d="M4 18.5H20"
+        stroke="black"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="transition-transform duration-300"
+      />
+    </svg>
+
+    <div class="flex items-center gap-2 lg:gap-3">
+      <div
+        class="w-9 h-9 flex items-center justify-center bg-blue-600 text-lg font-bold text-white rounded-xl"
+      >
+        <div>T</div>
+      </div>
+      <div class="hidden md:block font-bold text-xl">TechFlow</div>
+    </div>
+  </div>
+
+  <!-- Right side buttons -->
+  <div class="flex items-center gap-2 lg:gap-4">
+    <button (click)="openForm()" class="text-xs md:text-base font-medium hover:underline hover:cursor-pointer text-blue-500">
+      Sign In
+    </button>
+    <lib-header-button (click)="navigate('header/getstarted')"
+      label="Get Started"
+      bgColor="bg-blue-600 hover:bg-blue-700"
+      textColor="text-white"
+    ></lib-header-button>
+  </div>
+</div>

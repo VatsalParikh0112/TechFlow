@@ -1,0 +1,96 @@
+<div class="bg-white p-5 rounded-lg">
+  <h1 class="text-2xl font-bold mb-6 text-center">Form</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <!-- Name -->
+    <div>
+      <input
+        formControlName="name"
+        placeholder="Name"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        [class.border-red-500]="form.controls['name'].invalid && form.controls['name'].touched"
+      />
+      @if (form.controls['name'].invalid && form.controls['name'].touched) {
+      <p class="text-red-500 text-sm mt-1">Name is required.</p>
+      }
+    </div>
+
+    <!-- Email -->
+    <div>
+      <input
+        formControlName="email"
+        placeholder="Email"
+        type="email"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        [class.border-red-500]="form.controls['email'].invalid && form.controls['email'].touched"
+      />
+      @if (form.controls['email'].hasError('required') && form.controls['email'].touched) {
+      <p class="text-red-500 text-sm mt-1">Email is required.</p>
+      } @if (form.controls['email'].hasError('email') && form.controls['email'].touched) {
+      <p class="text-red-500 text-sm mt-1">Enter a valid email address.</p>
+      }
+    </div>
+
+    <!-- Password -->
+    <div>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        [class.border-red-500]="
+          form.controls['password'].invalid && form.controls['password'].touched
+        "
+      />
+      @if (form.controls['password'].hasError('required') && form.controls['password'].touched) {
+      <p class="text-red-500 text-sm mt-1">Password is required.</p>
+      } @if (form.controls['password'].hasError('minlength') && form.controls['password'].touched) {
+      <p class="text-red-500 text-sm mt-1">Password must be at least 6 characters.</p>
+      }
+    </div>
+
+    <!-- Age -->
+    <div>
+      <input
+        type="number"
+        formControlName="age"
+        placeholder="Age"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        [class.border-red-500]="form.controls['age'].invalid && form.controls['age'].touched"
+      />
+      @if (form.controls['age'].hasError('required') && form.controls['age'].touched) {
+      <p class="text-red-500 text-sm mt-1">Age is required.</p>
+      } @if (form.controls['age'].hasError('min') && form.controls['age'].touched) {
+      <p class="text-red-500 text-sm mt-1">You must be at least 18.</p>
+      }
+    </div>
+
+    <!-- Address -->
+    <div>
+      <textarea
+        formControlName="address"
+        placeholder="Address"
+        rows="3"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex justify-end gap-3 pt-4">
+      <button
+        type="button"
+        (click)="close()"
+        class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

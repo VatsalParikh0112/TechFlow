@@ -1,0 +1,49 @@
+<div class="flex flex-col text-white bg-gray-900 px-2 py-5 md:px-5 md:py-10 lg:px-10 gap-8 md:gap-10 xl:gap-12 ">
+  <div class="flex flex-col gap-5 md:flex-row">
+
+    <!-- buttons area -->
+    <div class="flex gap-10 min-[300px]:gap-12 min-[500px]:gap-16 md:w-1/2 order-1 flex-row md:order-2">
+      <div class="flex flex-col gap-2">
+        <span class=" text-gray-200 font-medium ">Products</span>
+        <div class=" flex flex-col ">
+          <lib-footer-button label="Features" (click)="navigate('products/features')"></lib-footer-button>
+          <lib-footer-button label="Pricing" (click)="navigate('products/pricing')"></lib-footer-button>
+          <lib-footer-button label="Documentation" (click)="navigate('products/documentation')"></lib-footer-button>
+          <lib-footer-button label="Api" (click)="navigate('products/api')"></lib-footer-button>
+        </div>
+      </div>
+      <div class=" flex flex-col gap-2 ">
+        <span class=" text-gray-200 font-medium ">Company</span>
+        <div class=" flex flex-col ">
+          <lib-footer-button label="About" (click)="navigate('company/about')"></lib-footer-button>
+          <lib-footer-button label="Blog" (click)="navigate('company/blog')"></lib-footer-button>
+          <lib-footer-button label="Careers" (click)="navigate('company/career')"></lib-footer-button>
+          <lib-footer-button label="Contact" (click)="navigate('company/contact')"></lib-footer-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer para -->
+    <div class="flex flex-col w-full md:w-1/2 min-[500px]:w-3/4 gap-3 md:gap-5 order-2 md:order-1">
+      <div class="flex items-center gap-2 lg:gap-3">
+        <div
+          class="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex items-center justify-center bg-blue-600 text-sm md:text-base lg:text-lg font-medium text-white rounded md:rounded-md lg:rounded-lg xl:rounded-xl"
+        >
+          <div>T</div>
+        </div>
+        <div class="font-bold text-sm md:text-base lg:text-lg xl:text-xl">TechFlow</div>
+      </div>
+      <p class="text-xs md:text-sm lg:text-base xl:text-lg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo quas asperiores
+        deleniti quidem rerum!
+      </p>
+      <div class="flex gap-2">
+        <lib-footer-icon></lib-footer-icon>
+        <lib-footer-icon></lib-footer-icon>
+        <lib-footer-icon></lib-footer-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class=" text-xs lg:text-sm text-center text-gray-300 ">@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic.</div>
+</div>
