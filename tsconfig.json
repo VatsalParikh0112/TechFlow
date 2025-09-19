@@ -15,9 +15,6 @@
       "shared": [
         "./dist/shared"
       ],
-      "shared-ui": [
-        "./dist/shared-ui"
-      ]
     },
     "importHelpers": true,
     "target": "ES2022",
